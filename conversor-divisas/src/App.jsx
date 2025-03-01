@@ -4,6 +4,7 @@ import CurrencyInput from "./components/CurrencyInput";
 import CurrencySelect from "./components/CurrencySelect";
 import ConvertButton from "./components/ConvertButton";
 import ResultDisplay from "./components/ResultDisplay";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 const currencies = ["USD", "EUR", "GBP", "JPY"];
 
@@ -35,18 +36,36 @@ export default function CurrencyConverter() {
   };
 
   return (
-    <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card p-4 shadow-lg" style={{ width: "400px" }}>
-        <h1 className="text-center mb-4">Conversor de Divisas</h1>
-        <CurrencyInput label="Monto" value={amount} onChange={setAmount} />
+    <div className="container bg-dark d-flex justify-content-center align-items-center min-vh-100">
+      <div
+        className="card p-4 shadow-lg text-light bg-dark"
+        style={{ width: "400px" }}
+      >
+        <h1
+          className="text-center mb-4"
+          style={{ fontFamily: "JosefinSans, sans-serif" }}
+        >
+          Conversor de Divisas
+        </h1>
+        <CurrencyInput
+          label={
+            <span style={{ fontFamily: "JosefinSans, sans-serif" }}>Monto</span>
+          }
+          value={amount}
+          onChange={setAmount}
+        />
         <CurrencySelect
-          label="De"
+          label={
+            <span style={{ fontFamily: "JosefinSans, sans-serif" }}>De</span>
+          }
           value={from}
           onChange={setFrom}
           options={currencies}
         />
         <CurrencySelect
-          label="A"
+          label={
+            <span style={{ fontFamily: "JosefinSans, sans-serif" }}>A</span>
+          }
           value={to}
           onChange={setTo}
           options={currencies}
